@@ -16,5 +16,9 @@ runs:
       shell: bash
     - run: git config user.email github-actions@github.com
       shell: bash
-    - run: git rebase -X ours origin/${{ inputs.main_name }}
+    - run: git add -A .
+      shell: bash
+    - run: git commit -m "Updated State" && git push -u origin ${{ inputs.state_name }} || echo "No changes!"
+      shell: bash
+    - run: git push --force
       shell: bash
