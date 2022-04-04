@@ -20,5 +20,3 @@ runs:
       shell: sh
     - run: git commit -m "Updated State" && git push -u origin ${{ inputs.state_name }} || echo "No changes!"
       shell: sh
-    - run: git push --force
-      shell: sh
